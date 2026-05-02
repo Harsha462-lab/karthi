@@ -38,3 +38,28 @@ print("Email box found:", email_box)
 
 input("Press Enter to close...")
 driver.quit()
+edge
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Open Edge browser
+driver = webdriver.Edge()
+
+# Open Google
+driver.get("https://www.google.com")
+
+# Find search box and search
+search = driver.find_element(By.NAME, "q")
+search.send_keys("Selenium Testing")
+search.send_keys(Keys.RETURN)
+
+# Wait for results
+time.sleep(3)
+
+# Print page title
+print("Title:", driver.title)
+
+# Close browser
+driver.quit()
